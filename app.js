@@ -1,24 +1,21 @@
 const express = require('express');
-
+var Product = require ('./model/Product')
 const app = express();
 
-app.use((req, res, next) => {
-    console.log('Requête reçue !');
-    next();
-});
 
 app.use((req, res, next) => {
-    res.status(201);
-    next();
-});
+    var product = new Product("1231","jhon","Wick")
 
-app.use((req, res, next) => {
-    res.json({ message: 'Votre requête a bien été reçue tonton!' });
-    next();
-});
+    //1ere etape, renvoyer la liste en temps que json
 
-app.use((req, res, next) => {
-    console.log('Réponse envoyée avec succès !');
+
+
+    //2eme etape
+    // Lire le fichier liste de produits
+    // stocker cette liste dans un object contenant un tableau de produit
+    //renvoyer l'objet
+    res.json(product);
+    next();
 });
 
 module.exports = app;
