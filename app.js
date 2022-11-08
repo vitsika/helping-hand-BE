@@ -10,7 +10,7 @@ const RouteProducts = require('./router/product')
 
 /* -------Laza---------------------*/
 
-mongoose.connect('mongodb+srv://LazaKely:Tolosaina1.@cluster0.otujmy1.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://LazaKely:<password>.@cluster0.otujmy1.mongodb.net/?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -27,11 +27,6 @@ app.use((req, res, next) => {
 });
 app.use(bodyParser.json());
 app.use('/api/products', RouteProducts);
-
-
-
-
-
 
 
 /*------------mongodb Compass--------*/
@@ -51,26 +46,6 @@ app.use('/api/product_mongo', (req, res, next) => {
     });
 })*/
 /*----------------------------------------------*/
-
-    // app.use(bodyParser.json());
-
-    // app.post('/api/product', (req, res, next) => {
-    //     delete req.body._id;
-    //     const product = new Product({
-    //         ...req.body
-    //     });
-    //     product.save()
-    //         .then(() => res.status(201).json({ message: 'Objet enregistré !' }))
-    //         .catch(error => res.status(400).json({ error }));
-    // });
-
-    // app.use('/api/product', (req, res, next) => {
-    //     Product.find()
-    //         .then(products => res.status(200).json(products))
-    //         .catch(error => res.status(400).json({ error }));
-    //     });
-    // app.use(express.json());
-    // module.exports = app;
 
 
 
