@@ -27,53 +27,12 @@ const productSchema = mongoose.Schema({
         required: true
     },
     created_at: {
-        type: Date,
-        required: true
+        type: String,
     },
     updated_at: {
-        type: Date
+        type: String
     },
 });
 
 module.exports = mongoose.model('Product', productSchema);
 
-
-
-
-
-/* --------------YVES-------------------
-
-function Product(id, nom, description) {      
-    this.id = id || null;
-    this.nom  = nom  || null;
-    this.description = description || null
-    
-}
-
-Product.prototype.getId = function() {
-    return this.id;
-}
-
-Product.prototype.setId = function(id) {
-    this.id = id;
-}
-
-Product.prototype.getName = function() {
-    return this.name;
-}
-
-Product.prototype.setName = function(name) {
-    this.name = name;
-}
-
-Product.prototype.getDescription = function() {
-    return this.description;
-}
-
-Product.prototype.setDescription = function(description) {
-    this.description = description;
-}
-*/
-
-
-// module.exports = Product;     // Export the Product function as it is 

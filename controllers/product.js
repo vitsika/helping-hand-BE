@@ -1,23 +1,30 @@
-// const Product = require('../model/product');
+const Product = require('../model/product');
 
-// exports.createProduct = (req, res) => {
-//     const prod = new Product(
-//     //     {
-//     //     name: req.body.name,
-//     //     description: req.body.description,
-//     //     imageUrl: req.body.imageUrl,
-//     //     category: req.body.category,
-//     //     euro_price: req.body.euro_price,
-//     //     ariary_price: req.body.ariary_price,
-//     //     created_at: req.body.created_at,
-//     //     updated_at: req.body.updated_at,
-//     // }
-//     req.body
-//     );
+exports.createProduct = (req, res) => {
+    const prod = new Product(req.body);
 
-//     prod.save()
-//     .then((product) => {
-//         return res.status(201).json({product})
-//     })
-//     .catch((error) => {return res.status(400).json({error}) });
-// }
+    prod.save()
+    .then((product) => {
+        return res.status(201).json({product})
+    })
+    .catch((error) => {return res.status(400).json({error}) });
+}
+
+exports.getOneProduct = (req, res)=>{
+    const id = req.params.id;
+    Product.findById({_id: id})
+    .then((product) => {
+        return res.status(200).json({product}) })
+    .catch((error)=>{
+        return res.status(400).json({error});
+    })
+}
+
+exports.getAllProducts = (req, res) => {
+    Product.find()
+    .then((products) => {
+        return res.status(200).json({products}) })
+    .catch((error)=>{
+        return res.status(400).json({error});
+    })
+}
