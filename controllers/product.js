@@ -1,9 +1,9 @@
 const Product = require('../model/product');
 
 exports.createProduct = (req, res) => {
-    const prod = new Product(req.body);
+    const product = new Product(req.body);
 
-    prod.save()
+    product.save()
     .then((product) => {
         return res.status(201).json({product})
     })
@@ -21,6 +21,7 @@ exports.getOneProduct = (req, res)=>{
 }
 
 exports.getAllProducts = (req, res) => {
+
     Product.find()
     .then((products) => {
         return res.status(200).json({products}) })
