@@ -9,7 +9,7 @@ const app = express();
 
 // /* -------Laza---------------------*/
 
-mongoose.connect('mongodb+srv://LazaKely:Tolosaina1.@cluster0.otujmy1.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://LazaKely:<passpass>.@cluster0.otujmy1.mongodb.net/?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
